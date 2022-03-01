@@ -30,12 +30,14 @@ Installation instructions and further documentation of the ROS bridge and additi
 
 
 ## CARLA CLIENT 
-#### foxy
+#### foxy + carla 0.9.12
 source /opt/ros/foxy/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla0912/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
 
-#### galactic
+#### galactic + carla 0.9.12
 source /opt/ros/galactic/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla0912/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
 
+#### galactic + carla 0.9.13
+source /opt/ros/galactic/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
 
 
 ### Launch Bridge (always needed). Can be launched on HIL (same machine as carla server) or on local laptop ("client") 
