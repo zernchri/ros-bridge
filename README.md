@@ -24,19 +24,15 @@ Installation instructions and further documentation of the ROS bridge and additi
 
 
 
-## -------------------------------------------------------------------------------------------------------------------------------------------------------
-## CARLA SERVER ------------------------------------------------------------------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------------------------------------------------------------------------------
+# CARLA SERVER ------------------------------------
 ./CarlaUE4.sh -quality-level=Low -ResX=500 -ResY=500
 
 
-## -------------------------------------------------------------------------------------------------------------------------------------------------------
-## CARLA CLIENT ------------------------------------------------------------------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------------------------------------------------------------------------------
-# foxy
+# CARLA CLIENT ------------------------------------
+### foxy
 source /opt/ros/foxy/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla0912/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
 
-# galactic
+### galactic
 source /opt/ros/galactic/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla0912/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
 
 
