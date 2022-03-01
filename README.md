@@ -21,3 +21,31 @@
 ## Getting started and documentation
 
 Installation instructions and further documentation of the ROS bridge and additional packages are found [__here__](https://carla.readthedocs.io/projects/ros-bridge/en/latest/).
+
+
+
+## -------------------------------------------------------------------------------------------------------------------------------------------------------
+## CARLA SERVER ------------------------------------------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------------------------------------------------------------
+./CarlaUE4.sh -quality-level=Low -ResX=500 -ResY=500
+
+
+## -------------------------------------------------------------------------------------------------------------------------------------------------------
+## CARLA CLIENT ------------------------------------------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------------------------------------------------------------
+# foxy
+source /opt/ros/foxy/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla0912/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
+
+# galactic
+source /opt/ros/galactic/setup.bash && export CARLA_ROOT=/opt/carla-simulator && export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:/home/sim/venv/carla0912/lib/python3.8/site-packages && cd ~/carla-ros-bridge/ && source install/setup.bash
+
+
+
+## Launch Bridge (always needed). Can be launched on HIL (same machine as carla server) or on local laptop ("client") 
+ros2 launch carla_ros_bridge carla_ros_bridge.launch.py timeout:=10.0
+
+## Spawn objects (ego vehicle + sensors are launched). Can be launched on HIL (same machine as carla server) or on local laptop ("client") 
+ros2 launch carla_spawn_objects carla_spawn_objects.launch.py spawn_point_ego_vehicle:="spawn_point_ego_vehicle"
+
+## Launch pygame for ego vehicle control. Can only be launched on local laptop because of pygame display restrictions.
+ros2 launch carla_manual_control carla_manual_control.launch.py
