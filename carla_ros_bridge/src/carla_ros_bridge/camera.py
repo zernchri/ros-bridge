@@ -17,6 +17,7 @@ from abc import abstractmethod
 import carla
 import numpy
 import transforms3d
+import cv2
 from cv_bridge import CvBridge
 
 import carla_common.transforms as trans
