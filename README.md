@@ -47,4 +47,6 @@ ros2 launch carla_ros_bridge carla_ros_bridge.launch.py timeout:=10.0
 ros2 launch carla_spawn_objects carla_spawn_objects.launch.py spawn_point_ego_vehicle:="spawn_point_ego_vehicle"
 
 ### Launch pygame for ego vehicle control. Can only be launched on local laptop because of pygame display restrictions.
+add carla venv to PYTHONPATH first and source carla venv:
+export PYTHONPATH=$PYTHONPATH:/home/sebastian/Code/venv/carla/lib/python3.8/site-packages && source /home/sebastian/Code/venv/carla/bin/activate
 ros2 launch carla_manual_control carla_manual_control.launch.py
