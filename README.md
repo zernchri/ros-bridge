@@ -24,6 +24,13 @@ Installation instructions and further documentation of the ROS bridge and additi
 
 ---
 
+## Install ROS bridge
+mkdir -p ~/carla-ros-bridge && cd ~/carla-ros-bridge
+git clone --recurse-submodules https://github.com/SebastianHuch/ros-bridge.git src/ros-bridge
+rosdep update
+rosdep install --from-paths src --ignore-src -r
+colcon build --packages-ignore pcl_recorder
+
 
 ## CARLA SERVER
 ./CarlaUE4.sh -quality-level=Low -ResX=500 -ResY=500
