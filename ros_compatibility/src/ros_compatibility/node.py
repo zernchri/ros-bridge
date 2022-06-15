@@ -138,7 +138,7 @@ elif ROS_VERSION == 2:
             super(CompatibleNode, self).__init__(
                 name,
                 allow_undeclared_parameters=True,
-                automatically_declare_parameters_from_overrides=True,
+                automatically_declare_parameters_from_overrides=False,
                 parameter_overrides=[param],
                 **kwargs)
 
